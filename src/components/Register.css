@@ -1,0 +1,54 @@
+body{
+    background-color: #f4f6f8;
+    font-family: 'Poppins', sans-serif;
+}
+
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.register-container{
+    /* sets width of the container to the value (no matter of screen width) */
+    width: 350px;
+
+    /* adds margin 50px on top & bottom and auto for left and right (auto centers the container) */
+    /* margin: 50px auto; */
+
+    /* Adds space inside the box’s border */
+    padding: 20px;
+
+    /* adds border around the container, 1px = thickness, solid = style, #ccc = light gray color */
+    border: 1px solid #ccc;
+
+    /* adds round corners to the border */
+    border-radius: 10px;
+
+    /* Adds a shadow behind the box for a raised 3D look. */
+    box-shadow: 0 0 20px rgba(148, 40, 215, 0.841);  /* 0=horizontal offset, 0=vertical offset, 10px=blur, rgba(0,0,0,0.1)=black color with 10% transparency */
+
+    /* Sets a very light gray background color */
+    background-color: #f9f9f9;
+
+
+
+}
+
+.register-container h1{
+    text-align: center;
+    margin-bottom: 30px
+}
+
+.register-form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.register-container p{
+    color: green;
+    margin-top: 10px;
+}
