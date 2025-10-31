@@ -25,9 +25,18 @@ function Login() {
             // setMessage(JSON.stringify(result.data))
             const token = result.data.accessToken // get token from result
             localStorage.setItem("token",token); //save token to local storage
-            
             setFormData({usernameOrEmail:'',password:''})
-            navigate('/home')
+
+            const decoded = jwtDecode(token);
+            const role = decoded.role;
+
+            // Navigate according to role
+            if (role === "ROLE_PATIENT") navigate("/patient-home");
+            else if (role === "ROLE_HEALTHCARE_PROVIDER") navigate("/hp-home");
+            else if (role === "ROLE_INSURANCE_COMPANY") navigate("/ic-home");
+            else if (role === "ROLE_ADMIN") navigate("/admin-home");
+            else navigate("/unauthorized");
+
         } catch(err){
             if(err.response){
                 setMessage(err.response.data)
@@ -41,7 +50,7 @@ function Login() {
     <div>
         <h1>Login Here</h1>
         <form onSubmit={handleSubmit}>
-            <input type='text' name='usernameOrEmail' placeholder='UsernameOrEmail or Email' value={formData.usernameOrEmail} onChange={handleChange}></input><br/>
+            <input type='text' name='usernameOrEmail' placeholder='Username or Email' value={formData.usernameOrEmail} onChange={handleChange}></input><br/>
             <input type='text' name='password' placeholder='Password' value={formData.password} onChange={handleChange}></input><br/>
             <button type='submit'>Submit</button>
             {message && <p>{message}</p>}

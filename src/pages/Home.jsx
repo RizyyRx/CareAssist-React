@@ -1,18 +1,19 @@
-import { jwtDecode } from 'jwt-decode';
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
 
-    const decoded = jwtDecode(localStorage.getItem("token"));
-
-    const username = decoded.sub
-    const role = decoded.role
+    const navigate = useNavigate();
+    const handleRegister = ()=>{
+        navigate('/register')
+    }
 
   return (
     <div>
-        <h1>Home</h1> <br/>
-        <p>Welcome {username} <br/> Your role is {role}</p>
+        <h1>Welcome to Care Assist</h1>
+        <button onClick={handleRegister}>Register</button>
     </div>
+    
   )
 }
 

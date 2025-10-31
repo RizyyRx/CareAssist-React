@@ -59,9 +59,10 @@ function Register() {
               <option value="HEALTHCARE_PROVIDER">Healthcare Provider</option>
               <option value="INSURANCE_COMPANY">Insurance Company</option>
           </select> <br/>
-          <button type='submit'>Submit</button>
+          <button type='submit'>Register</button>
+          <p>Already registered? <a href='/login'>login here</a></p>
         </form>
-        {message && (<p> {message}<br/> {isRegistered? 'Redirecting to login page...': 'Registration failed'}</p>)}
+        {message && (<p className='register-message'> {message}<br/> {isRegistered? 'Redirecting to login page...': 'Registration failed'}</p>)}
       </div>
 
     </div>
