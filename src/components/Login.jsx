@@ -1,5 +1,7 @@
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [formData,setFormData] = useState( {
@@ -13,14 +15,19 @@ function Login() {
 
     const [message, setMessage] = useState('')
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (event)=>{
         event.preventDefault()
 
         try{
             const result = await axios.post('http://localhost:8080/api/auth/login',formData);
-            setMessage(JSON.stringify(result.data))
+            // setMessage(JSON.stringify(result.data))
+            const token = result.data.accessToken // get token from result
+            localStorage.setItem("token",token); //save token to local storage
+            
             setFormData({usernameOrEmail:'',password:''})
-
+            navigate('/home')
         } catch(err){
             if(err.response){
                 setMessage(err.response.data)
