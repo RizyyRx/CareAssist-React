@@ -8,6 +8,7 @@ import ICHome from './pages/ICHome'
 import AdminHome from './pages/AdminHome'
 import Unauthorized from './pages/Unauthorized'
 import Home from './pages/Home'
+import UpdatePatientProfile from './pages/UpdatePatientProfile'
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
         <Route path='/ic-home' element={<ICHome/>}></Route>
         <Route path='/admin-home' element={<AdminHome/>}></Route>
         <Route path='/unauthorized' element={<Unauthorized/>}></Route>
+
+        <Route path='/update-patient-profile' element={<UpdatePatientProfile/>}></Route>
+        
       </Routes>
   )
 }
