@@ -2,12 +2,15 @@ import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthContext';
 
 function Login() {
     const [formData,setFormData] = useState( {
         usernameOrEmail:'',
         password:''
     });
+
+    const {setUser} = useAuth(); // get setUser from context
 
     const handleChange = (event)=>{
         setFormData({...formData, [event.target.name]:event.target.value});
@@ -29,12 +32,15 @@ function Login() {
 
             const decoded = jwtDecode(token);
             const role = decoded.role;
+            const username = decoded.sub;
+
+            setUser({username,role});
 
             // Navigate according to role
-            if (role === "ROLE_PATIENT") navigate("/patient-home");
-            else if (role === "ROLE_HEALTHCARE_PROVIDER") navigate("/hp-home");
-            else if (role === "ROLE_INSURANCE_COMPANY") navigate("/ic-home");
-            else if (role === "ROLE_ADMIN") navigate("/admin-home");
+            if (role === "ROLE_PATIENT") navigate("/patient/patient-home");
+            else if (role === "ROLE_HEALTHCARE_PROVIDER") navigate("/hp/hp-home");
+            else if (role === "ROLE_INSURANCE_COMPANY") navigate("/ic/ic-home");
+            else if (role === "ROLE_ADMIN") navigate("/admin/admin-home");
             else navigate("/unauthorized");
 
         } catch(err){
@@ -50,8 +56,8 @@ function Login() {
     <div>
         <h1>Login Here</h1>
         <form onSubmit={handleSubmit}>
-            <input type='text' name='usernameOrEmail' placeholder='Username or Email' value={formData.usernameOrEmail} onChange={handleChange}></input><br/>
-            <input type='text' name='password' placeholder='Password' value={formData.password} onChange={handleChange}></input><br/>
+            <input type='text' name='usernameOrEmail' placeholder='Username or Email' value={formData.usernameOrEmail} onChange={handleChange} required></input><br/>
+            <input type='text' name='password' placeholder='Password' value={formData.password} onChange={handleChange} required></input><br/>
             <button type='submit'>Submit</button>
             {message && <p>{message}</p>}
         </form>

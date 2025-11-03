@@ -50,9 +50,9 @@ function Register() {
       <div className='register-container'>
         <h1>Register Here</h1>
         <form className='register-form' onSubmit={handleSubmit}>
-          <input type='text' name='username' placeholder='Username' value={formData.username} onChange={handleChange}></input> <br/>
-          <input type='email' name='email' placeholder='Email' value={formData.email} onChange={handleChange}></input> <br/>
-          <input type='password' name='password' placeholder='Password' value={formData.password} onChange={handleChange}></input> <br/>
+          <input type='text' name='username' placeholder='Username' value={formData.username} onChange={handleChange} required></input> <br/>
+          <input type='email' name='email' placeholder='Email' value={formData.email} onChange={handleChange} required></input> <br/>
+          <input type='password' name='password' placeholder='Password' value={formData.password} onChange={handleChange} required></input> <br/>
           <select name='role' value={formData.role} onChange={handleChange}>
               <option value="">Select Role</option> 
               <option value="PATIENT">Patient</option>

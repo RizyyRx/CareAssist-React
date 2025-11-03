@@ -19,12 +19,13 @@ function UpdatePatientProfile() {
         setFormData({...formData, [event.target.name]:event.target.value})
     }
 
+    // Runs after ui is rendered. Will re-render the ui after this function is complete
     useEffect(()=>{
        const fetchProfile = async()=>{
             try{
                 const result = await axios.get("http://localhost:8080/api/patient/profile",{headers:{Authorization:`Bearer ${token}`}})
 
-                setFormData(result.data)
+                setFormData(result.data) // set the present value to form data
             } catch (error) {
                 if (error.response) {
                 setMessage(error.response.data)
@@ -36,8 +37,6 @@ function UpdatePatientProfile() {
         fetchProfile()
 
     },[]);
-
-    
 
     const handleSubmit = async (event)=>{
         event.preventDefault()

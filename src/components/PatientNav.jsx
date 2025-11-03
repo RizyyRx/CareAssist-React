@@ -1,0 +1,15 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+function PatientNav() {
+  return (
+    <div>
+        <nav>
+            <Link to="patient-home">Home</Link>|{" "}
+            <Link to="update-patient-profile">Update Profile</Link>
+        </nav>
+    </div>
+  )
+}
+
+export default PatientNav

@@ -1,32 +1,16 @@
 import React from 'react'
-import { jwtDecode } from 'jwt-decode';
+import { useAuth } from '../components/AuthContext';
 
 function ICHome() {
-  const token = localStorage.getItem("token")
-
-    if(!token){
-        return <h2>You are not authorized to access this page</h2>
-    }
     
-    try{
-        const decoded = jwtDecode(token);
-        const username = decoded.sub
-        const role = decoded.role
+    const {user} = useAuth();
 
-        if(role !== "ROLE_INSURANCE_COMPANY"){
-            return <h2>You are not authorized to access this page</h2>
-        }
-
-        return (
-            <div>
-                <h1>Insurance Company Home</h1> <br/>
-                <p>Welcome {username} <br/> Your role is {role}</p>
-            </div>
-        )
-    } catch (error){
-        console.error("Invalid token:", error);
-        return <h2>You are not authorized to access this page</h2>;
-    }
+    return (
+        <div>
+            <h1>Insurance Company Home</h1> <br/>
+            <p>Welcome {user?.username} <br/> Your role is {user?.role}</p>
+        </div>
+    )
 }
 
 export default ICHome
