@@ -6,7 +6,8 @@ function PatientNav() {
     <div>
         <nav>
             <Link to="patient-home">Home</Link>|{" "}
-            <Link to="update-patient-profile">Update Profile</Link>
+            <Link to="update-patient-profile">Update Profile</Link>|{" "}
+            <Link to="/logout">Logout</Link>
         </nav>
     </div>
   )

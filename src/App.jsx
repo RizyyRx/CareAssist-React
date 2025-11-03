@@ -15,6 +15,7 @@ import PatientMaster from './pages/PatientMaster'
 import ICMaster from './pages/ICMaster'
 import HPMaster from './pages/HPMaster'
 import AdminMaster from './pages/AdminMaster'
+import Logout from './components/Logout'
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/logout' element={<Logout/>}/>
+
 
         <Route path='/patient' element={<ProtectedRoute allowedRole="ROLE_PATIENT"> <PatientMaster/> </ProtectedRoute>}>
           <Route index element={<Navigate to="patient-home" replace />} />

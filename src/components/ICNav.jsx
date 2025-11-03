@@ -6,6 +6,7 @@ function ICNav() {
     <div>
         <nav>
             <Link to="ic-home">Home</Link>|{" "}
+            <Link to="/logout">Logout</Link>
         </nav>
     </div>
   )

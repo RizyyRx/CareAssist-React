@@ -6,6 +6,7 @@ function AdminNav() {
     <div>
         <nav>
             <Link to="admin-home">Home</Link>
+            <Link to="/logout">Logout</Link>
         </nav>
     </div>
   )

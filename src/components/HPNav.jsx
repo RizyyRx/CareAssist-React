@@ -6,6 +6,7 @@ function HPNav() {
     <div>
         <nav>
             <Link to="hp-home">Home</Link>|{" "}
+            <Link to="/logout">Logout</Link>
         </nav>
     </div>
   )
