@@ -17,6 +17,7 @@ import HPMaster from './pages/HPMaster'
 import AdminMaster from './pages/AdminMaster'
 import Logout from './components/Logout'
 import SelectInsurancePlan from './pages/SelectInsurancePlan'
+import CreateInvoice from './pages/CreateInvoice'
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
         <Route path='/hp' element={<ProtectedRoute allowedRole="ROLE_HEALTHCARE_PROVIDER"> <HPMaster/> </ProtectedRoute>}>
           <Route index element={<Navigate to="hp-home" replace />} />
           <Route path='hp-home' element={<HPHome/>}/>
+          <Route path='create-invoice' element={<CreateInvoice/>}/>
         </Route>
         
         <Route path='/admin' element={<ProtectedRoute allowedRole="ROLE_ADMIN"> <AdminMaster/> </ProtectedRoute>}>
