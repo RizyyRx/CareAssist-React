@@ -16,6 +16,7 @@ import ICMaster from './pages/ICMaster'
 import HPMaster from './pages/HPMaster'
 import AdminMaster from './pages/AdminMaster'
 import Logout from './components/Logout'
+import SelectInsurancePlan from './pages/SelectInsurancePlan'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route index element={<Navigate to="patient-home" replace />} />
           <Route path='patient-home' element={<PatientHome/>}/>
           <Route path='update-patient-profile' element={<UpdatePatientProfile/>}/>
+          <Route path='select-insurance-plan' element={<SelectInsurancePlan/>}/>
         </Route>
 
         <Route path='/ic' element={<ProtectedRoute allowedRole="ROLE_INSURANCE_COMPANY"> <ICMaster/> </ProtectedRoute>}>
