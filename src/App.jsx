@@ -36,6 +36,7 @@ function App() {
         <Route path='/ic' element={<ProtectedRoute allowedRole="ROLE_INSURANCE_COMPANY"> <ICMaster/> </ProtectedRoute>}>
           <Route index element={<Navigate to="ic-home" replace />} />
           <Route path='ic-home' element={<ICHome/>}/>
+          <Route path='create-insurance-plan' element={<CreateInsurancePlan/>}/>
         </Route>
 
         <Route path='/hp' element={<ProtectedRoute allowedRole="ROLE_HEALTHCARE_PROVIDER"> <HPMaster/> </ProtectedRoute>}>
