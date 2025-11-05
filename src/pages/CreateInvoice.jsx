@@ -8,7 +8,6 @@ function CreateInvoice() {
 
     const [formData, setFormData] = useState({
         patientId: "",
-        invoiceNumber: "",
         consultationFee: "",
         diagnosticTestsFee: "",
         diagnosticScanFee: "",
@@ -39,7 +38,6 @@ function CreateInvoice() {
 
         <form onSubmit={handleSubmit}>
             <input type='number' name='patientId' placeholder='Patient ID' value={formData.patientId} onChange={handleChange} required></input>
-            <input type='text' name='invoiceNumber' placeholder='Invoice Ref ID' value={formData.invoiceNumber} onChange={handleChange} required></input>
             <input type='number' name='consultationFee' placeholder='Consultation Fee' value={formData.consultationFee} onChange={handleChange} required /> 
             <input type='number' name='diagnosticTestsFee' placeholder='Diagnostic Tests Fee' value={formData.diagnosticTestsFee} onChange={handleChange} required /> 
             <input type='number' name='diagnosticScanFee' placeholder='Diagnostic Scan Fee' value={formData.diagnosticScanFee} onChange={handleChange} required /> 

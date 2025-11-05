@@ -57,7 +57,7 @@ function SelectInsurancePlan() {
 
       {<GetInsurancePlans/>}
 
-      <h2>Selected Insurance Plans</h2>
+      <h2>Selected Insurance Plan</h2>
       {selectedPlans.length > 0 ? (
         <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", marginTop: "10px" }}>
           <thead>

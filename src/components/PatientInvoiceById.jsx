@@ -42,7 +42,6 @@ function PatientInvoiceById() {
           <thead>
             <tr>
               <th>Invoice ID</th>
-              <th>Invoice Number</th>
               <th>Consultation Fee</th>
               <th>Diagnostic Scan Fee</th>
               <th>Diagnostic Tests Fee</th>
@@ -53,15 +52,14 @@ function PatientInvoiceById() {
               <th>Status</th>
               <th>Invoice Date</th>
               <th>Due Date</th>
-              <th>Patient ID</th>
-              <th>Provider ID</th>
+              <th>Patient Name</th>
+              <th>Provider Name</th>
             </tr>
           </thead>
           <tbody>
             {invoices.map((invoice, index) => (
               <tr key={index}>
                 <td>{invoice.invoiceId}</td>
-                <td>{invoice.invoiceNumber}</td>
                 <td>{invoice.consultationFee}</td>
                 <td>{invoice.diagnosticScanFee}</td>
                 <td>{invoice.diagnosticTestsFee}</td>
@@ -72,8 +70,8 @@ function PatientInvoiceById() {
                 <td>{invoice.status}</td>
                 <td>{invoice.invoiceDate}</td>
                 <td>{invoice.dueDate}</td>
-                <td>{invoice.patientId}</td>
-                <td>{invoice.providerId}</td>
+                <td>{invoice.patientName}</td>
+                <td>{invoice.providerName}</td>
               </tr>
             ))}
           </tbody>
