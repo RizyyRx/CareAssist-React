@@ -19,6 +19,7 @@ import Logout from './components/Logout'
 import SelectInsurancePlan from './pages/SelectInsurancePlan'
 import CreateInvoice from './pages/CreateInvoice'
 import CurrentInvoices from './pages/CurrentInvoices'
+import SubmitClaim from './pages/SubmitClaim'
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='update-patient-profile' element={<UpdatePatientProfile/>}/>
           <Route path='select-insurance-plan' element={<SelectInsurancePlan/>}/>
           <Route path='current-invoices' element={<CurrentInvoices/>}/>
+          <Route path='submit-claim' element={<SubmitClaim/>}/>
         </Route>
 
         <Route path='/ic' element={<ProtectedRoute allowedRole="ROLE_INSURANCE_COMPANY"> <ICMaster/> </ProtectedRoute>}>

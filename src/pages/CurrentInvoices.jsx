@@ -23,7 +23,6 @@ function CurrentInvoices() {
     }
   };
 
-  // ✅ Mark invoice as paid
   const markAsPaid = async (invoiceId) => {
     try {
       const result = await axios.patch(
