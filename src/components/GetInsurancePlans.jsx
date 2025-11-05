@@ -1,7 +1,7 @@
 import React, { useEffect, useState }  from 'react'
 import axios from 'axios';
 
-function GetInsurancePlans() {
+function GetInsurancePlans({refreshTrigger}) {
 
     const token = localStorage.getItem("token")
 
@@ -26,7 +26,7 @@ function GetInsurancePlans() {
 
     useEffect(() => {
       getAllPlans();
-    }, []);
+    }, [refreshTrigger]);
   return (
     <div>
         <h2>Available Insurance Plans</h2>

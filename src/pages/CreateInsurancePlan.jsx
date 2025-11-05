@@ -26,13 +26,14 @@ function CreateInsurancePlan() {
 
       try{
         const result = await axios.post("http://localhost:8080/api/insurance-company/create", formData,{headers:{Authorization:`Bearer ${token}`}})
-        setCreateMessage(result.data.message || JSON.stringify(result.data));
-        getAllPlans()
+        setCreateMessage(result.data);
       } catch(error){
+        console.log("Error object:", error);
+        console.log("Error.response:", error.response);
         if(error.response){
           setCreateMessage(error.response.data.message || JSON.stringify(error.response.data));
         } else{
-          setCreateMessage("Server not reachable")
+          setCreateMessage("Server not reachable");
         }
       }
     }
@@ -51,7 +52,7 @@ function CreateInsurancePlan() {
             <button type='submit'>Create plan</button>
         </form>
         {createMessage && <p>{createMessage}</p>}
-        {<GetInsurancePlans/>}
+        {<GetInsurancePlans refreshTrigger={createMessage}/>}
     </div>
   )
 }
