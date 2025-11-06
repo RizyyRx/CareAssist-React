@@ -5,6 +5,8 @@ import CurrentClaims from "../components/CurrentClaims";
 function SubmitClaim() {
   const [invoices, setInvoices] = useState([]);
   const [plans, setPlans] = useState([]);
+  const [refreshTrigger, setRefreshTrigger] = useState(false);
+
   const [formData, setFormData] = useState({
     invoiceId: "",
     insurancePlanId: "",
@@ -57,6 +59,7 @@ function SubmitClaim() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setMessage(result.data);
+      setRefreshTrigger(prev => !prev);
       setFormData({
         invoiceId: "",
         insurancePlanId: "",
@@ -68,7 +71,7 @@ function SubmitClaim() {
     } catch (error) {
       console.error("Error submitting claim:", error);
       if (error.response) {
-        setMessage(error.response.data.message || "Failed to submit claim.");
+        setMessage(error.response.data || "Failed to submit claim.");
       } else {
         setMessage("Server not reachable.");
       }
@@ -101,7 +104,7 @@ function SubmitClaim() {
         <input type="date" name="dateOfService" value={formData.dateOfService} onChange={handleChange} required />
         <button type="submit">Submit Claim</button>
       </form>
-      {<CurrentClaims/>}
+      {<CurrentClaims refresh={refreshTrigger} />}
     </div>
   );
 }

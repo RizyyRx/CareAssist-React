@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function CurrentClaims() {
+function CurrentClaims({ refresh }) {
   const [claims, setClaims] = useState([]);
   const [message, setMessage] = useState('');
   const token = localStorage.getItem('token');
@@ -20,7 +20,13 @@ function CurrentClaims() {
       }
     };
     fetchClaims();
-  }, [token]);
+  }, [refresh]);
+
+      const formatDateTime = (dateTimeString) => {
+    if (!dateTimeString) return "";
+    const date = new Date(dateTimeString);
+    return date.toLocaleString("en-GB", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  };
 
   return (
     <div>
@@ -43,9 +49,9 @@ function CurrentClaims() {
                 <td>{claim.diagnosis}</td>
                 <td>{claim.treatment}</td>
                 <td>{claim.status}</td>
-                <td>{claim.submittedAt || '-'}</td>
-                <td>{claim.reviewedAt || '-'}</td>
-                <td>{claim.approvedAt || '-'}</td>
+                <td>{formatDateTime(claim.submittedAt) || '-'}</td>
+                <td>{formatDateTime(claim.reviewedAt) || '-'}</td>
+                <td>{formatDateTime(claim.approvedAt) || '-'}</td>
               </tr>
             ))}
           </tbody>

@@ -20,6 +20,10 @@ import SelectInsurancePlan from './pages/SelectInsurancePlan'
 import CreateInvoice from './pages/CreateInvoice'
 import CurrentInvoices from './pages/CurrentInvoices'
 import SubmitClaim from './pages/SubmitClaim'
+import AllClaims from './pages/AllClaims'
+import CurrentPayments from './pages/CurrentPayments'
+import ProcessPayment from './pages/ProcessPayment'
+import ManageAccounts from './pages/ManageAccounts'
 
 function App() {
 
@@ -38,12 +42,15 @@ function App() {
           <Route path='select-insurance-plan' element={<SelectInsurancePlan/>}/>
           <Route path='current-invoices' element={<CurrentInvoices/>}/>
           <Route path='submit-claim' element={<SubmitClaim/>}/>
+          <Route path='current-payments' element={<CurrentPayments/>}/>
         </Route>
 
         <Route path='/ic' element={<ProtectedRoute allowedRole="ROLE_INSURANCE_COMPANY"> <ICMaster/> </ProtectedRoute>}>
           <Route index element={<Navigate to="ic-home" replace />} />
           <Route path='ic-home' element={<ICHome/>}/>
           <Route path='create-insurance-plan' element={<CreateInsurancePlan/>}/>
+          <Route path='all-claims' element={<AllClaims/>}/>
+          <Route path='process-payment' element={<ProcessPayment/>}/>
         </Route>
 
         <Route path='/hp' element={<ProtectedRoute allowedRole="ROLE_HEALTHCARE_PROVIDER"> <HPMaster/> </ProtectedRoute>}>
@@ -55,6 +62,7 @@ function App() {
         <Route path='/admin' element={<ProtectedRoute allowedRole="ROLE_ADMIN"> <AdminMaster/> </ProtectedRoute>}>
           <Route index element={<Navigate to="admin-home" replace />} />
           <Route path='admin-home' element={<AdminHome/>}/>
+          <Route path='manage-accounts' element={<ManageAccounts/>}/>
         </Route>
 
 

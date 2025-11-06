@@ -10,6 +10,7 @@ function PatientNav() {
             <Link to="select-insurance-plan">Select Plan</Link>|{" "}
             <Link to="current-invoices">Invoices</Link>|{" "}
             <Link to="submit-claim">Claims</Link>|{" "}
+            <Link to="current-payments">Payments</Link>|{" "}
             <Link to="/logout">Logout</Link>
         </nav>
     </div>
