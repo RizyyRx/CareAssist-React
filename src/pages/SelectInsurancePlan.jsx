@@ -7,7 +7,7 @@ function SelectInsurancePlan() {
   const token = localStorage.getItem("token");
   const [planId, setPlanId] = useState("");
   const [message, setMessage] = useState("");
-  const [refreshTrigger, setRefreshTrigger] = useState(false); // 🔁 for reloading SelectedPlans
+  const [refreshTrigger, setRefreshTrigger] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ function SelectInsurancePlan() {
       setMessage(response.data);
       setPlanId("");
 
-      // 🔁 trigger refresh for SelectedPlans component
+
       setRefreshTrigger(prev => !prev);
     } catch (error) {
       if (error.response) {

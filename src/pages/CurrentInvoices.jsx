@@ -31,7 +31,7 @@ function CurrentInvoices() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       alert(result.data);
-      getInvoices(); // refresh the list
+      getInvoices();
     } catch (error) {
       console.error("Error marking invoice paid:", error);
       if (error.response) {

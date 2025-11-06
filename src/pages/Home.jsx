@@ -5,7 +5,7 @@ function Home() {
 
     const navigate = useNavigate();
     const handleRegister = ()=>{
-        navigate('/register')
+        navigate('/patient-register')
     }
 
   return (

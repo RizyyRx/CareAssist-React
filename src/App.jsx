@@ -1,5 +1,5 @@
 import './App.css'
-import Register from './components/Register'
+import AdminRegister from './components/AdminRegister'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Login from './components/Login'
 import PatientHome from './pages/PatientHome'
@@ -24,13 +24,15 @@ import AllClaims from './pages/AllClaims'
 import CurrentPayments from './pages/CurrentPayments'
 import ProcessPayment from './pages/ProcessPayment'
 import ManageAccounts from './pages/ManageAccounts'
+import PatientRegister from './components/PatientRegister'
+import NotFound from './components/NotFound'
 
 function App() {
 
   return (
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/register' element={<Register/>}/>
+        <Route path='/patient-register' element={<PatientRegister/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/logout' element={<Logout/>}/>
 
@@ -63,13 +65,12 @@ function App() {
           <Route index element={<Navigate to="admin-home" replace />} />
           <Route path='admin-home' element={<AdminHome/>}/>
           <Route path='manage-accounts' element={<ManageAccounts/>}/>
+          <Route path='admin-register' element={<AdminRegister/>}/>
         </Route>
-
 
         <Route path='/unauthorized' element={<Unauthorized/>}></Route>
         
-        <Route path='/create-insurance-plan' element={<CreateInsurancePlan/>}></Route>
-        
+        <Route path="*" element={<NotFound/>} />
       </Routes>
   )
 }

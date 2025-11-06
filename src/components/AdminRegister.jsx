@@ -13,8 +13,6 @@ function Register() {
     });
 
     const [message, setMessage] = useState('');
-    const [isRegistered, setIsRegistered] = useState(false);
-    const navigate = useNavigate();
 
     // update formData state variable with the target event value
     const handleChange = (event)=>{
@@ -27,13 +25,7 @@ function Register() {
       try{
         const result = await axios.post('http://localhost:8080/api/auth/register',formData);
         setMessage(result.data); // backend url returns message
-        setIsRegistered(true);
         setFormData({username:'',email:'',password:'',role:''}) // reset formData to clear the input fields
-
-        // redirect to /login with 2s delay to show success message
-        setTimeout(()=>{
-          navigate('/login');
-        },2000)
 
       } catch(err){
         if(err.response){
@@ -41,7 +33,6 @@ function Register() {
         } else{
           setMessage('Server not reachable');
         }
-        setIsRegistered(false)
       }
     }
 
@@ -58,11 +49,12 @@ function Register() {
               <option value="PATIENT">Patient</option>
               <option value="HEALTHCARE_PROVIDER">Healthcare Provider</option>
               <option value="INSURANCE_COMPANY">Insurance Company</option>
+              <option value="ADMIN">Admin</option>
           </select> <br/>
           <button type='submit'>Register</button>
           <p>Already registered? <a href='/login'>login here</a></p>
         </form>
-        {message && (<p className='register-message'> {message}<br/> {isRegistered? 'Redirecting to login page...': 'Registration failed'}</p>)}
+        {message && (<p className='register-message'> {message}</p>)}
       </div>
 
     </div>
