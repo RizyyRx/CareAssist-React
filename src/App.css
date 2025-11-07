@@ -12,17 +12,27 @@ body {
 button {
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Hover effect (same as top nav hover style) */
 button:hover {
   background-color: black;
   color: white;
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
