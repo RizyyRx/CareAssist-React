@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import './Register.css'
+import './PatientRegister.css'
 import { useNavigate } from 'react-router-dom';
+import HomeNav from './HomeNav';
 
 function Register() {
 
@@ -46,19 +47,22 @@ function Register() {
     }
 
   return (
-    <div className='register-page'>
-      <div className='register-container'>
-        <h1>Patient Register</h1>
-        <form className='register-form' onSubmit={handleSubmit}>
-          <input type='text' name='username' placeholder='Username' value={formData.username} onChange={handleChange} required></input> <br/>
-          <input type='email' name='email' placeholder='Email' value={formData.email} onChange={handleChange} required></input> <br/>
-          <input type='password' name='password' placeholder='Password' value={formData.password} onChange={handleChange} required></input> <br/> <br/>
-          <button type='submit'>Register</button>
-          <p>Already registered? <a href='/login'>login here</a></p>
-        </form>
-        {message && (<p className='register-message'> {message}<br/> {isRegistered? 'Redirecting to login page...': 'Registration failed'}</p>)}
-      </div>
 
+    <div>
+      <HomeNav/>
+      <div className='register-page'>
+        <div className='register-container'>
+          <h1>Patient Register</h1>
+          <form className='register-form' onSubmit={handleSubmit}>
+            <input type='text' name='username' placeholder='Username' value={formData.username} onChange={handleChange} required></input> <br/>
+            <input type='email' name='email' placeholder='Email' value={formData.email} onChange={handleChange} required></input> <br/>
+            <input type='password' name='password' placeholder='Password' value={formData.password} onChange={handleChange} required></input> <br/> <br/>
+            <button type='submit'>Register</button>
+            <p>Already registered? <a href='/login'>login here</a></p>
+          </form>
+          {message && (<p className='register-message'> {message}<br/> {isRegistered? 'Redirecting to login page...': 'Registration failed'}</p>)}
+        </div>
+      </div>
     </div>
   )
 }

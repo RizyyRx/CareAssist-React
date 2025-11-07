@@ -1,15 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Nav.css';
 
 function AdminNav() {
   return (
     <div>
-        <nav>
-            <Link to="admin-home">Home</Link>|{" "}
-            <Link to="manage-accounts">Manage Accounts</Link>|{" "}
-            <Link to="admin-register">Register</Link>|{" "}
+      <nav>
+        <div className="nav-container">
+          <div className="nav-brand">
+            <Link to="admin-home">Care <span>Assist</span></Link>
+          </div>
+
+          <div className="nav-links">
+            <Link to="admin-home">Home</Link>
+            <Link to="manage-accounts">Manage Accounts</Link>
+            <Link to="admin-register">Register</Link>
             <Link to="/logout">Logout</Link>
-        </nav>
+          </div>
+        </div>
+      </nav>
     </div>
   )
 }

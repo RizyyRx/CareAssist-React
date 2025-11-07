@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+nav {
+  background-color: #685aca;
+  color: white;
+  padding: 15px 30px;
+  font-family: 'Poppins', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-brand {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: 'Merriweather', serif;
+}
+
+.nav-brand a,
+.nav-brand a:link,
+.nav-brand a:visited,
+.nav-brand a:hover,
+.nav-brand a:active {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: black;
+  transform: scale(1.05);
+}
+
+.nav-brand a:hover {
+  color: #dcd6f7;
+}

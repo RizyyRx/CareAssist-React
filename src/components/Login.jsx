@@ -3,6 +3,8 @@ import { jwtDecode } from 'jwt-decode';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
+import './Login.css';
+import HomeNav from './HomeNav';
 
 function Login() {
     const [formData,setFormData] = useState( {
@@ -54,13 +56,18 @@ function Login() {
 
   return (
     <div>
-        <h1>Login Here</h1>
-        <form onSubmit={handleSubmit}>
-            <input type='text' name='usernameOrEmail' placeholder='Username or Email' value={formData.usernameOrEmail} onChange={handleChange} required></input><br/>
-            <input type='text' name='password' placeholder='Password' value={formData.password} onChange={handleChange} required></input><br/>
-            <button type='submit'>Submit</button>
-            {message && <p>{message}</p>}
-        </form>
+        <HomeNav/>
+        <div className="login-page">
+            <div className="login-container">
+                <h1>Login Here</h1>
+                <form className="login-form" onSubmit={handleSubmit}>
+                <input type="text" name="usernameOrEmail" placeholder="Username or Email" value={formData.usernameOrEmail} onChange={handleChange} required />
+                <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+                <button type="submit">Submit</button>
+                {message && <p className="login-message">{message}</p>}
+                </form>
+            </div>
+        </div>
     </div>
   )
 }
