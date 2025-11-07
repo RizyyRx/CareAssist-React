@@ -35,7 +35,7 @@ function SelectedPlans({ refresh }) {
       {message && <p>{message}</p>}
 
       {selectedPlans.length > 0 ? (
-        <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", marginTop: "10px" }}>
+        <table border="1" cellPadding="8">
           <thead>
             <tr>
               <th>Plan Name</th>

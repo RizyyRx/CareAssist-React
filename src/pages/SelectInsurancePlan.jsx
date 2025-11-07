@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import GetInsurancePlans from "../components/GetInsurancePlans";
 import SelectedPlans from "../components/SelectedPlans";
+import './SelectInsurancePlan.css'
 
 function SelectInsurancePlan() {
   const token = localStorage.getItem("token");
@@ -33,10 +34,10 @@ function SelectInsurancePlan() {
   };
 
   return (
-    <div>
+<div className="select-plan-page">
       <h1>Select Insurance Plan</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form className="select-plan-form" onSubmit={handleSubmit}>
         <input
           type="number"
           placeholder="Enter Plan ID"
@@ -49,9 +50,8 @@ function SelectInsurancePlan() {
 
       {message && <p>{message}</p>}
 
-      <GetInsurancePlans />
-
       <SelectedPlans refresh={refreshTrigger} />
+      <GetInsurancePlans refreshTrigger={refreshTrigger} />
     </div>
   );
 }
