@@ -36,3 +36,20 @@ button:disabled {
   transform: none;
 }
 
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 25px 0;
+  font-size: 16px;
+  color: rgb(223, 226, 253);
+  background-color: rgb(28, 25, 40);
+  border-top: 1px solid rgba(223, 226, 253, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.footer p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+

@@ -1,0 +1,145 @@
+.home-page {
+  min-height: 100vh;
+  color: rgb(223, 226, 253);
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 100px 60px 60px;
+  background: rgba(223, 226, 253, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(104, 90, 202, 0.4);
+  margin: 40px auto;
+  width: 80%;
+}
+
+.hero-section h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: rgb(223, 226, 253);
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 22px;
+  line-height: 1.7;
+  color: rgb(223, 226, 253);
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.get-started-btn {
+  background-color: #685aca;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.get-started-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(104, 90, 202, 0.6);
+}
+
+.features-section {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: rgb(223, 226, 253);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: rgb(223, 226, 253);
+  color: #333;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(104, 90, 202, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: #685aca;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.mission-section {
+  background-color: rgba(223, 226, 253, 0.1);
+  text-align: center;
+  padding: 60px 80px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(104, 90, 202, 0.3);
+  margin: 60px auto;
+  width: 85%;
+}
+
+.mission-section h2 {
+  font-size: 42px;
+  color: rgb(223, 226, 253);
+  margin-bottom: 20px;
+}
+
+.mission-section p {
+  font-size: 20px;
+  color: rgb(223, 226, 253);
+  line-height: 1.8;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 50px 60px;
+}
+
+.contact-section h2 {
+  font-size: 38px;
+  color: rgb(223, 226, 253);
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  color: rgb(223, 226, 253);
+  line-height: 1.6;
+}
+
+.contact-section a {
+  color: #685aca;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 16px;
+  color: rgb(223, 226, 253);
+  opacity: 0.8;
+}

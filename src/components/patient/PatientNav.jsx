@@ -11,8 +11,8 @@ function PatientNav() {
 
             <div className="nav-links">
               <Link to="patient-home">Home</Link>
-              <Link to="update-patient-profile">Update Profile</Link>
-              <Link to="select-insurance-plan">Select Plan</Link>
+              <Link to="update-patient-profile">Profile</Link>
+              <Link to="select-insurance-plan">Plans</Link>
               <Link to="current-invoices">Invoices</Link>
               <Link to="submit-claim">Claims</Link>
               <Link to="current-payments">Payments</Link>

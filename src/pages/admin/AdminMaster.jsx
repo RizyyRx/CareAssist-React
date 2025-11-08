@@ -7,6 +7,7 @@ function AdminMaster() {
     <div>
         <AdminNav/>
         <Outlet/>
+        <Footer/>
     </div>
   )
 }

@@ -1,0 +1,102 @@
+.hp-home-container {
+  min-height: 100vh;
+  padding: 40px 60px;
+  color: rgb(223, 226, 253);
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.welcome-section h1 {
+  font-size: 60px;
+  font-weight: 600;
+  color: rgb(223, 226, 253);
+  margin-bottom: 15px;
+}
+
+.welcome-section p {
+  font-size: 20px;
+  color: rgb(223, 226, 253);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.section {
+  background-color: rgba(223, 226, 253, 0.1);
+  border-radius: 20px;
+  padding: 30px 40px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 15px rgba(104, 90, 202, 0.4);
+}
+
+.section h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: rgb(223, 226, 253);
+  margin-bottom: 20px;
+}
+
+.section p,
+.section li {
+  font-size: 18px;
+  color: rgb(223, 226, 253);
+  line-height: 1.7;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li {
+  margin-bottom: 10px;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.step-box {
+  background-color: rgb(223, 226, 253);
+  color: #333;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(104, 90, 202, 0.3);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+  transform: translateY(-5px);
+}
+
+.step-box h3 {
+  color: #685aca;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.step-box p {
+  color: #333;
+  font-size: 16px;
+}
+
+.benefits-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-section li {
+  background-color: rgb(223, 226, 253);
+  color: #222;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(104, 90, 202, 0.3);
+}
