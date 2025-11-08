@@ -1,0 +1,57 @@
+.all-claims-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+.all-claims-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(223, 226, 253);
+}
+
+.all-claims-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(104, 90, 202, 0.3);
+}
+
+.all-claims-container th, .all-claims-container td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.all-claims-container th {
+    background-color: rgb(39, 33, 60);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.all-claims-container td {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.all-claims-container tr:hover {
+    background-color: #f4f4f4;
+}
+
+.all-claims-container button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.all-claims-container button:hover {
+    background-color: #45a049;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import GetInsurancePlans from '../components/GetInsurancePlans';
+import './CreateInsurancePlan.css';
 
 
 function CreateInsurancePlan() {
@@ -40,19 +41,27 @@ function CreateInsurancePlan() {
 
 
   return (
-    <div>
+    <div className='create-insurance-plan-page'>
         <h1>Create Insurance Plan</h1>
-
-        <form onSubmit={handleSubmit}>
-            <input type='text' name='planName' value={formData.planName} placeholder='Plan Name' onChange={handleChange} required></input>
-            <input type='number' name='coverageAmount' value={formData.coverageAmount} placeholder='Coverage Amount' onChange={handleChange} required></input>
-            <input type='number' name='premiumAmount' value={formData.premiumAmount} placeholder='Premium Amount' onChange={handleChange} required></input>
-            <input type='number' name='policyTerm' value={formData.policyTerm} placeholder='Policy Term' onChange={handleChange} required></input>
-            <input type='text' name='description' value={formData.description} placeholder='Description' onChange={handleChange} required></input>
-            <button type='submit'>Create plan</button>
-        </form>
-        {createMessage && <p>{createMessage}</p>}
-        {<GetInsurancePlans refreshTrigger={createMessage}/>}
+        <div className='form-container'>
+          <form className='insurance-plan-form' onSubmit={handleSubmit}>
+              <label htmlFor='planName'>Plan Name</label>
+              <input type='text' id='planName' name='planName' value={formData.planName} placeholder='Plan Name' onChange={handleChange} required></input>
+              <label htmlFor='coverageAmount'>Coverage Amount</label>
+              <input type='number' id='coverageAmount' name='coverageAmount' value={formData.coverageAmount} placeholder='Coverage Amount' onChange={handleChange} required></input>
+              <label htmlFor='premiumAmount'>Premium Amount</label>
+              <input type='number' id='premiumAmount' name='premiumAmount' value={formData.premiumAmount} placeholder='Premium Amount' onChange={handleChange} required></input>
+              <label htmlFor='policyTerm'>Policy Term</label>
+              <input type='number' id='policyTerm' name='policyTerm' value={formData.policyTerm} placeholder='Policy Term' onChange={handleChange} required></input>
+              <label htmlFor='description'>Description</label>
+              <input type='text' id='description' name='description' value={formData.description} placeholder='Description' onChange={handleChange} required></input>
+              <button type='submit'>Create plan</button>
+              {createMessage && <p>{createMessage}</p>}
+          </form>
+        </div>
+        <div className='available-plans-section'>
+          <GetInsurancePlans refreshTrigger={createMessage}/>
+        </div>
     </div>
   )
 }

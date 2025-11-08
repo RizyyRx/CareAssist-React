@@ -5,12 +5,12 @@
 }
 
 body {
-  background-color: #e9e6ff;
+  background-color: rgb(36, 34, 53);
   font-family: 'Poppins', sans-serif;
 }
 
 button {
-  background-color: black;
+  background-color: #5a69d3;
   color: white;
   padding: 12px 20px;
   font-size: 20px;

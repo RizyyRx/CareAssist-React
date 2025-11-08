@@ -1,10 +1,10 @@
-.process-payment-page {
+.create-invoice-page {
   min-height: 100vh;
   padding: 40px 60px;
   color: #333;
 }
 
-.process-payment-page h2 {
+.create-invoice-page h2 {
   text-align: center;
   font-size: 40px;
   margin-bottom: 30px;
@@ -12,13 +12,20 @@
   font-weight: 600;
 }
 
-.process-form-container {
+.create-invoice-page p {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
+
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.process-form {
+.invoice-form {
   background-color: rgb(39, 33, 60);
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(104, 90, 202, 0.4);
@@ -29,16 +36,7 @@
   gap: 15px;
 }
 
-.process-form label {
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 4px;
-  margin-top: 8px;
-  display: block;
-}
-
-.process-form input {
+.invoice-form input {
   padding: 12px 15px;
   font-size: 16px;
   border-radius: 10px;
@@ -48,30 +46,22 @@
   box-sizing: border-box;
 }
 
-.process-form input:focus {
+.invoice-form label {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  margin-top: 8px;
+  display: block;
+}
+
+
+.invoice-form input:focus {
   box-shadow: 0 0 5px #ffffff;
   background-color: #f9f9ff;
 }
 
-.process-form button {
+.invoice-form button {
   align-self: center;
   margin-top: 10px;
-}
-
-.process-message {
-  text-align: center;
-  font-size: 18px;
-  color: rgb(144, 33, 196);
-  margin-top: 10px;
-}
-
-.payments-section {
-  margin-top: 60px;
-}
-
-.payments-section h2 {
-  text-align: center;
-  font-size: 36px;
-  color: rgb(223, 226, 253);
-  margin-bottom: 20px;
 }

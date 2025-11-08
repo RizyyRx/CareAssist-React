@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import GetAllPatients from '../components/GetAllPatients';
 import axios from "axios";
 import PatientInvoiceById from '../components/PatientInvoiceById';
+import './CreateInvoice.css';
 
 
 function CreateInvoice() {
@@ -33,20 +34,28 @@ function CreateInvoice() {
   };
 
   return (
-    <div>
+    <div className='create-invoice-page'>
         <h2>Create Invoice</h2>
-
-        <form onSubmit={handleSubmit}>
-            <input type='number' name='patientId' placeholder='Patient ID' value={formData.patientId} onChange={handleChange} required></input>
-            <input type='number' name='consultationFee' placeholder='Consultation Fee' value={formData.consultationFee} onChange={handleChange} required /> 
-            <input type='number' name='diagnosticTestsFee' placeholder='Diagnostic Tests Fee' value={formData.diagnosticTestsFee} onChange={handleChange} required /> 
-            <input type='number' name='diagnosticScanFee' placeholder='Diagnostic Scan Fee' value={formData.diagnosticScanFee} onChange={handleChange} required /> 
-            <input type='number' name='medicationFee' placeholder='Medication Fee' value={formData.medicationFee} onChange={handleChange} required /> 
-            <button type='submit'>Create Invoice</button>
-        </form>
-        {message && <p>{message}</p>}
-        {<GetAllPatients/>}
-        {<PatientInvoiceById/>}
+        <div className='form-container'>
+          <form className='invoice-form' onSubmit={handleSubmit}>
+              <label htmlFor='patientId'>Patient ID</label>
+              <input type='number' id='patientId' name='patientId' placeholder='Patient ID' value={formData.patientId} onChange={handleChange} required></input>
+              <label htmlFor='consultationFee'>Consultation Fee</label>
+              <input type='number' id='consultationFee' name='consultationFee' placeholder='Consultation Fee' value={formData.consultationFee} onChange={handleChange} required /> 
+              <label htmlFor='diagnosticTestsFee'>Diagnostic Tests Fee</label>
+              <input type='number' id='diagnosticTestsFee' name='diagnosticTestsFee' placeholder='Diagnostic Tests Fee' value={formData.diagnosticTestsFee} onChange={handleChange} required /> 
+              <label htmlFor='diagnosticScanFee'>Diagnostic Scan Fee</label>
+              <input type='number' id='diagnosticScanFee' name='diagnosticScanFee' placeholder='Diagnostic Scan Fee' value={formData.diagnosticScanFee} onChange={handleChange} required /> 
+              <label htmlFor='medicationFee'>Medication Fee</label>
+              <input type='number' id='medicationFee' name='medicationFee' placeholder='Medication Fee' value={formData.medicationFee} onChange={handleChange} required /> 
+              <button type='submit'>Create Invoice</button>
+              {message && <p>{message}</p>}
+          </form>
+        </div>
+        <div className='current-claims-section'>
+          <GetAllPatients/>
+          <PatientInvoiceById/>
+        </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@
   text-align: center;
   font-size: 40px;
   margin-bottom: 30px;
-  color: #222;
+  color: rgb(223, 226, 253);
   font-weight: 600;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .claim-form {
-  background-color: #685aca;
+  background-color: rgb(39, 33, 60);
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(104, 90, 202, 0.4);
   padding: 30px 40px;
@@ -75,7 +75,7 @@
 .current-claims-section h1 {
   text-align: center;
   font-size: 36px;
-  color: #222;
+  color: rgb(223, 226, 253);
   margin-bottom: 20px;
 }
 

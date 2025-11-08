@@ -10,7 +10,7 @@
   margin-bottom: 30px;
   font-size: 50px;
   font-weight: 600;
-  color: #222;
+  color: rgb(223, 226, 253);
 }
 
 
@@ -49,7 +49,7 @@
   text-align: center;
   margin-top: 50px;
   font-size: 32px;
-  color: #222;
+  color: rgb(223, 226, 253);
   margin-bottom: 50px;
 }
 
@@ -71,7 +71,7 @@ th, td {
 }
 
 th {
-  background-color: #685aca;
+  background-color: rgb(39, 33, 60);
   color: white;
   font-weight: 600;
   font-size: 30px;

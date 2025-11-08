@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./PatientInvoiceById.css";
 
 function PatientInvoiceById() {
   const [patientId, setPatientId] = useState("");
@@ -27,10 +28,10 @@ function PatientInvoiceById() {
   };
 
   return (
-    <div>
+    <div className="patient-invoice-page">
       <h2>Get Invoices by Patient ID</h2>
 
-      <form onSubmit={getInvoicesById}>
+      <form className="invoice-form-container" onSubmit={getInvoicesById}>
         <input type="number" placeholder="Enter Patient ID" value={patientId} onChange={(e) => setPatientId(e.target.value)} required/>
         <button type="submit">Fetch Invoices</button>
       </form>
@@ -38,46 +39,44 @@ function PatientInvoiceById() {
       {message && <p>{message}</p>}
 
       {invoices.length > 0 ? (
-        <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", marginTop: "10px" }}>
-          <thead>
-            <tr>
-              <th>Invoice ID</th>
-              <th>Consultation Fee</th>
-              <th>Diagnostic Scan Fee</th>
-              <th>Diagnostic Tests Fee</th>
-              <th>Medication Fee</th>
-              <th>Subtotal</th>
-              <th>Tax</th>
-              <th>Total Amount</th>
-              <th>Status</th>
-              <th>Invoice Date</th>
-              <th>Due Date</th>
-              <th>Patient Name</th>
-              <th>Provider Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {invoices.map((invoice, index) => (
-              <tr key={index}>
-                <td>{invoice.invoiceId}</td>
-                <td>{invoice.consultationFee}</td>
-                <td>{invoice.diagnosticScanFee}</td>
-                <td>{invoice.diagnosticTestsFee}</td>
-                <td>{invoice.medicationFee}</td>
-                <td>{invoice.subtotal}</td>
-                <td>{invoice.tax}</td>
-                <td>{invoice.totalAmount}</td>
-                <td>{invoice.status}</td>
-                <td>{invoice.invoiceDate}</td>
-                <td>{invoice.dueDate}</td>
-                <td>{invoice.patientName}</td>
-                <td>{invoice.providerName}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="invoice-grid">
+          {invoices.map((invoice, index) => (
+            <div key={index} className="invoice-card">
+              <div className="invoice-header">
+                <h3>Invoice #{invoice.invoiceId}</h3>
+                <span className={`invoice-status ${invoice.status === "PAID" ? "paid" : "unpaid"}`}>
+                  {invoice.status}
+                </span>
+              </div>
+              <div className="invoice-details">
+                <span>Patient:</span>
+                <p>{invoice.patientName}</p>
+                <span>Provider:</span>
+                <p>{invoice.providerName}</p>
+                <span>Consultation Fee:</span>
+                <p>₹{invoice.consultationFee}</p>
+                <span>Scan Fee:</span>
+                <p>₹{invoice.diagnosticScanFee}</p>
+                <span>Tests Fee:</span>
+                <p>₹{invoice.diagnosticTestsFee}</p>
+                <span>Medication Fee:</span>
+                <p>₹{invoice.medicationFee}</p>
+                <span>Subtotal:</span>
+                <p>₹{invoice.subtotal}</p>
+                <span>Tax:</span>
+                <p>₹{invoice.tax}</p>
+                <span>Total Amount:</span>
+                <p><strong>₹{invoice.totalAmount}</strong></p>
+                <span>Invoice Date:</span>
+                <p>{invoice.invoiceDate}</p>
+                <span>Due Date:</span>
+                <p>{invoice.dueDate}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       ) : (
-        <p>No invoices found.</p>
+        <p className="no-invoice-text">No invoices found.</p>
       )}
     </div>
   );

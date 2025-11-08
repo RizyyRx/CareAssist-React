@@ -1,10 +1,10 @@
-.invoice-page {
+.patient-invoice-page {
   min-height: 100vh;
   padding: 40px 60px;
   color: #333;
 }
 
-.invoice-page h2 {
+.patient-invoice-page h2 {
   text-align: center;
   font-size: 40px;
   margin-bottom: 30px;
@@ -12,12 +12,33 @@
   font-weight: 600;
 }
 
-.invoice-page p {
+.patient-invoice-page p {
   text-align: center;
   font-size: 18px;
   color: rgb(144, 33, 196);
   margin-top: 10px;
-  
+}
+
+.invoice-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.invoice-form-container input {
+  padding: 10px 15px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  width: 220px;
+}
+
+.invoice-form-container input:focus {
+  border-color: #685aca;
+  box-shadow: 0 0 5px #685aca;
 }
 
 .invoice-grid {
@@ -86,27 +107,6 @@
   font-weight: 600;
   color: #222;
   margin-top: 10px;
-}
-
-.invoice-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.invoice-actions button {
-  padding: 8px 18px;
-  border: none;
-  border-radius: 20px;
-  background-color: black;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.invoice-actions button:hover {
-  transform: scale(1.05);
 }
 
 .no-invoice-text {

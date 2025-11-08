@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
 
 nav {
-  background-color: #685aca;
+  background-color: rgb(28, 25, 40);
   color: white;
   padding: 15px 30px;
   font-family: 'Poppins', sans-serif;
@@ -52,8 +52,9 @@ nav {
 }
 
 .nav-links a:hover {
-  background-color: black;
+  background-color: rgb(223, 226, 253);
   transform: scale(1.10);
+  color: black;
 }
 
 .nav-brand a:hover {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SelectedPlans from "../components/SelectedPlans";
+import "./AllClaims.css";
 
 function AllClaims() {
   const [claims, setClaims] = useState([]);
@@ -43,10 +44,10 @@ function AllClaims() {
   };
 
   return (
-    <div>
+    <div className="all-claims-container">
       <h2>All Claims</h2>
       {message && <p>{message}</p>}
-      <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", marginTop: "10px" }}>
+      <table>
         <thead>
           <tr><th>Claim ID</th><th>Claim Amount</th><th>Invoice Amount</th><th>Date of Service</th><th>Diagnosis</th><th>Treatment</th><th>Status</th><th>Submitted At</th><th>Reviewed At</th><th>Approved At</th><th>Action</th></tr>
         </thead>
