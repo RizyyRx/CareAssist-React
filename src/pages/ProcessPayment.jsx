@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import AllPayments from "../components/AllPayments";
+import './ProcessPayment.css';
 
 function ProcessPayment() {
   const [formData, setFormData] = useState({
@@ -41,15 +42,26 @@ function ProcessPayment() {
   };
 
   return (
-    <div>
+    <div className="process-payment-page">
       <h2>Process Claim Payment</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="number" name="claimId" value={formData.claimId} placeholder="Claim ID" onChange={handleChange} required/>
-        <input type="number" name="amountPaid" value={formData.amountPaid} placeholder="Enter Amount" onChange={handleChange} required/>
-        <button type="submit">Process Payment</button>
-      </form>
-      {message && <p>{message}</p>}
-      {<AllPayments  refresh={refreshTrigger}/>}
+
+      <div className="process-form-container">
+        <form className="process-form" onSubmit={handleSubmit}>
+          <label htmlFor="claimId">Claim ID</label>
+          <input type="number" id="claimId" name="claimId" value={formData.claimId} placeholder="Enter Claim ID" onChange={handleChange} required />
+
+          <label htmlFor="amountPaid">Amount Paid</label>
+          <input type="number" id="amountPaid" name="amountPaid" value={formData.amountPaid} placeholder="Enter Amount" onChange={handleChange} required />
+
+          <button type="submit">Process Payment</button>
+        </form>
+      </div>
+
+      {message && <p className="process-message">{message}</p>}
+
+      <div className="payments-section">
+        <AllPayments refresh={refreshTrigger} />
+      </div>
     </div>
   );
 }

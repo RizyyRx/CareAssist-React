@@ -85,6 +85,7 @@
 .invoice-details span {
   font-weight: 600;
   color: #222;
+  margin-top: 10px;
 }
 
 .invoice-actions {

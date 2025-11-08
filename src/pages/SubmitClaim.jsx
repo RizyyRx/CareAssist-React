@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CurrentClaims from "../components/CurrentClaims";
+import "./SubmitClaim.css";
 
 function SubmitClaim() {
   const [invoices, setInvoices] = useState([]);
@@ -71,7 +72,15 @@ function SubmitClaim() {
     } catch (error) {
       console.error("Error submitting claim:", error);
       if (error.response) {
-        setMessage(error.response.data || "Failed to submit claim.");
+        const data = error.response.data;
+
+        if (typeof data === "object") {
+            const formatted = Object.values(data).join(", ");
+            setMessage(formatted);
+        }
+        else {
+            setMessage(data);
+        }
       } else {
         setMessage("Server not reachable.");
       }
@@ -79,33 +88,50 @@ function SubmitClaim() {
   };
 
   return (
-    <div>
-      <h2>Submit Insurance Claim</h2>
+<div className="submit-claim-page">
+  <h2>Submit Insurance Claim</h2>
+
+  <div className="claim-form-container">
+    <form className="claim-form" onSubmit={handleSubmit}>
+      <label htmlFor="invoiceId">Select Invoice</label>
+      <select id="invoiceId" name="invoiceId" value={formData.invoiceId} onChange={handleChange} required>
+        <option value="">-- Select Invoice --</option>
+        {invoices.map((inv) => (
+          <option key={inv.invoiceId} value={inv.invoiceId}>
+            Invoice #{inv.invoiceId} - ₹{inv.totalAmount} ({inv.status})
+          </option>
+        ))}
+      </select>
+
+      <label htmlFor="insurancePlanId">Select Insurance Plan</label>
+      <select id="insurancePlanId" name="insurancePlanId" value={formData.insurancePlanId} onChange={handleChange} required>
+        <option value="">-- Select Plan --</option>
+        {plans.map((plan) => (
+          <option key={plan.planId} value={plan.planId}>
+            {plan.planName} (Coverage: ₹{plan.coverageAmount})
+          </option>
+        ))}
+      </select>
+
+      <label htmlFor="diagnosis">Diagnosis</label>
+      <input type="text" id="diagnosis" name="diagnosis" placeholder="Diagnosis" value={formData.diagnosis} onChange={handleChange} required />
+
+      <label htmlFor="treatment">Treatment</label>
+      <input type="text" id="treatment" name="treatment" placeholder="Treatment" value={formData.treatment} onChange={handleChange} required />
+
+      <label htmlFor="dateOfService">Date of Service</label>
+      <input type="date" id="dateOfService" name="dateOfService" value={formData.dateOfService} onChange={handleChange} required />
+
+      <button type="submit">Submit Claim</button>
       {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <select name="invoiceId" value={formData.invoiceId} onChange={handleChange} required>
-          <option value="">-- Select Invoice --</option>
-          {invoices.map((inv) => (
-            <option key={inv.invoiceId} value={inv.invoiceId}>
-              Invoice #{inv.invoiceId} - ₹{inv.totalAmount} ({inv.status})
-            </option>
-          ))}
-        </select>
-        <select name="insurancePlanId" value={formData.insurancePlanId} onChange={handleChange} required>
-          <option value="">-- Select Plan --</option>
-          {plans.map((plan) => (
-            <option key={plan.planId} value={plan.planId}>
-              {plan.planName} (Coverage: ₹{plan.coverageAmount})
-            </option>
-          ))}
-        </select>
-        <input type="text" name="diagnosis" placeholder="Diagnosis" value={formData.diagnosis} onChange={handleChange} required />
-        <input type="text" name="treatment" placeholder="Treatment" value={formData.treatment} onChange={handleChange} required />
-        <input type="date" name="dateOfService" value={formData.dateOfService} onChange={handleChange} required />
-        <button type="submit">Submit Claim</button>
-      </form>
-      {<CurrentClaims refresh={refreshTrigger} />}
-    </div>
+    </form>
+  </div>
+
+  <div className="current-claims-section">
+    <CurrentClaims refresh={refreshTrigger} />
+  </div>
+</div>
+
   );
 }
 

@@ -1,0 +1,130 @@
+.submit-claim-page {
+  min-height: 100vh;
+  padding: 40px 60px;
+  color: #333;
+}
+
+.submit-claim-page h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: 600;
+}
+
+.submit-claim-page p {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
+
+.claim-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.claim-form {
+  background-color: #685aca;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(104, 90, 202, 0.4);
+  padding: 30px 40px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.claim-form select,
+.claim-form input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.claim-form label {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  margin-top: 8px;
+  display: block;
+}
+
+
+.claim-form input:focus,
+.claim-form select:focus {
+  box-shadow: 0 0 5px #ffffff;
+  background-color: #f9f9ff;
+}
+
+.claim-form button {
+  align-self: center;
+  margin-top: 10px;
+}
+
+.current-claims-section {
+  margin-top: 60px;
+}
+
+.current-claims-section h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.claim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  justify-content: center;
+  justify-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.claim-card {
+  width: 420px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(104, 90, 202, 0.3);
+  padding: 20px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.claim-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(104, 90, 202, 0.5);
+}
+
+.claim-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #685aca;
+  margin-bottom: 10px;
+}
+
+.claim-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+  font-size: 16px;
+  color: #444;
+}
+
+.claim-details span {
+  font-weight: 600;
+  color: #222;
+}
+
+.no-claims-text {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  margin-top: 20px;
+}
