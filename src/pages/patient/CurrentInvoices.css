@@ -1,0 +1,121 @@
+.invoice-page {
+  min-height: 100vh;
+  padding: 40px 60px;
+  color: #333;
+}
+
+.invoice-page h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: rgb(223, 226, 253);
+  font-weight: 600;
+}
+
+.invoice-page p {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(223, 226, 253);
+  margin-top: 10px;
+  
+}
+
+.invoice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, auto));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.invoice-card {
+  width: 420px;
+  background-color: rgb(223, 226, 253);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(104, 90, 202, 0.3);
+  padding: 20px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.invoice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(104, 90, 202, 0.5);
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.invoice-header h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #685aca;
+}
+
+.invoice-status {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+  background-color: #f0eaff;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.invoice-status.paid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.invoice-status.unpaid {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.invoice-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  font-size: 16px;
+  color: #444;
+}
+
+.invoice-details p {
+  color: black;
+}
+
+.invoice-details span {
+  font-weight: 600;
+  color: #222;
+  margin-top: 10px;
+}
+
+.invoice-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.invoice-actions button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.invoice-actions button:hover {
+  transform: scale(1.05);
+}
+
+.no-invoice-text {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  margin-top: 20px;
+}

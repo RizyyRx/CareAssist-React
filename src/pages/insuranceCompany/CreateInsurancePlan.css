@@ -1,0 +1,75 @@
+.create-insurance-plan-page {
+  min-height: 100vh;
+  padding: 40px 60px;
+  color: #333;
+}
+
+.create-insurance-plan-page h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: rgb(223, 226, 253);
+  font-weight: 600;
+}
+
+.available-plans-section h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 32px;
+  color: rgb(223, 226, 253);
+  margin-bottom: 50px;
+}
+
+.create-insurance-plan-page p {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(223, 226, 253);
+  margin-top: 10px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.insurance-plan-form {
+  background-color: rgb(39, 33, 60);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(104, 90, 202, 0.4);
+  padding: 30px 40px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.insurance-plan-form input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.insurance-plan-form label {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  margin-top: 8px;
+  display: block;
+}
+
+
+.insurance-plan-form input:focus {
+  box-shadow: 0 0 5px #ffffff;
+  background-color: #f9f9ff;
+}
+
+.insurance-plan-form button {
+  align-self: center;
+  margin-top: 10px;
+}
