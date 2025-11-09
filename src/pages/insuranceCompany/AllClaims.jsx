@@ -52,13 +52,14 @@ function AllClaims() {
       {message && <p>{message}</p>}
       <table>
         <thead>
-          <tr><th>Claim ID</th><th>Claim Amount</th><th>Invoice Amount</th><th>Date of Service</th><th>Diagnosis</th><th>Treatment</th><th>Status</th><th>Submitted At</th><th>Reviewed At</th><th>Approved At</th>{!isAdmin && <th>Action</th>}</tr>
+          <tr><th>Claim ID</th><th>Patient ID</th><th>Claim Amount</th><th>Invoice Amount</th><th>Date of Service</th><th>Diagnosis</th><th>Treatment</th><th>Status</th><th>Submitted At</th><th>Reviewed At</th><th>Approved At</th>{!isAdmin && <th>Action</th>}</tr>
         </thead>
         <tbody>
           {claims.length > 0 ? (
             claims.map((claim) => (
               <tr key={claim.claimId}>
                 <td>{claim.claimId}</td>
+                <td>{claim.patientId}</td>
                 <td>{claim.claimAmount}</td>
                 <td>{claim.invoiceAmount}</td>
                 <td>{claim.dateOfService}</td>

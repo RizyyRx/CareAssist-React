@@ -12,6 +12,7 @@ function SelectedPlans({ refresh }) {
         "http://localhost:8080/api/patient/selected-plans",
         { headers: { Authorization: `Bearer ${token}` } }
       );
+      console.log("Selected plans response:", response.data);
       setSelectedPlans(response.data);
       setMessage("");
     } catch (error) {
@@ -46,6 +47,7 @@ function SelectedPlans({ refresh }) {
               <th>Description</th>
               <th>Start Date</th>
               <th>End Date</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -55,10 +57,11 @@ function SelectedPlans({ refresh }) {
                 <td>{plan.coverageAmount}</td>
                 <td>{plan.premiumAmount}</td>
                 <td>{plan.coverageBalance}</td>
-                <td>{plan.policyTerm}</td>
+                <td>{plan.policyTerm} months</td>
                 <td>{plan.description}</td>
                 <td>{plan.startDate}</td>
                 <td>{plan.endDate}</td>
+                <td>{plan.status}</td>
               </tr>
             ))}
           </tbody>

@@ -49,7 +49,7 @@ function GetInsurancePlans({refreshTrigger}) {
                     <td>{plan.planName}</td>
                     <td>{plan.coverageAmount}</td>
                     <td>{plan.premiumAmount}</td>
-                    <td>{plan.policyTerm}</td>
+                    <td>{plan.policyTerm} months</td>
                     <td>{plan.description}</td>
                 </tr>
                 ))}

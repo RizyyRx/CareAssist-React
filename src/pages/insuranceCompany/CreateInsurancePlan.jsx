@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import GetInsurancePlans from '../../components/insuranceCompany/GetInsurancePlans';
+import SearchSelectedPlans from '../../components/insuranceCompany/SearchSelectedPlans';
 import './CreateInsurancePlan.css';
 
 
@@ -51,7 +52,7 @@ function CreateInsurancePlan() {
               <input type='number' id='coverageAmount' name='coverageAmount' value={formData.coverageAmount} placeholder='Coverage Amount' onChange={handleChange} required></input>
               <label htmlFor='premiumAmount'>Premium Amount</label>
               <input type='number' id='premiumAmount' name='premiumAmount' value={formData.premiumAmount} placeholder='Premium Amount' onChange={handleChange} required></input>
-              <label htmlFor='policyTerm'>Policy Term</label>
+              <label htmlFor='policyTerm'>Policy Term (In months)</label>
               <input type='number' id='policyTerm' name='policyTerm' value={formData.policyTerm} placeholder='Policy Term' onChange={handleChange} required></input>
               <label htmlFor='description'>Description</label>
               <input type='text' id='description' name='description' value={formData.description} placeholder='Description' onChange={handleChange} required></input>
@@ -62,6 +63,7 @@ function CreateInsurancePlan() {
         <div className='available-plans-section'>
           <GetInsurancePlans refreshTrigger={createMessage}/>
         </div>
+        <SearchSelectedPlans/>
     </div>
   )
 }
