@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../components/AuthContext";
 import "./ICHome.css";
+import axios from "axios";
 
 function ICHome() {
   const { user } = useAuth();
+  const [displayName, setDisplayName] = useState("");
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const fetchUsername = async () => {
+      if (!user?.username) return; 
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/api/auth/get-username/${user.username}`,
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        setDisplayName(response.data);
+      } catch (error) {
+        console.error("Error fetching username:", error);
+        setDisplayName(user.username); 
+      }
+    };
+
+    fetchUsername();
+  }, [user, token]);
 
   return (
     <div className="ic-home-container">
       <div className="welcome-section">
-        <h1>Welcome Insurance Partner</h1>
+        <h1>Welcome Insurance Partner{displayName ? `, ${displayName}` : ""}</h1>
         <p>
           Welcome to <strong>CareAssist</strong> — the complete insurance claim
           management and billing solution.
