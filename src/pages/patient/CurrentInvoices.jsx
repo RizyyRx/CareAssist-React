@@ -17,7 +17,7 @@ function CurrentInvoices() {
     } catch (error) {
       console.error("Error fetching invoices:", error);
       if (error.response) {
-        setMessage(error.response.data.message || "Failed to load invoices.");
+        setMessage(error.response.data || "Failed to load invoices.");
       } else {
         setMessage("Server not reachable.");
       }
