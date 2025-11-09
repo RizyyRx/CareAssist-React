@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
+#root, .app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+
 body {
   background-color: rgb(36, 34, 53);
   font-family: 'Poppins', sans-serif;
@@ -36,20 +51,19 @@ button:disabled {
   transform: none;
 }
 
+/* Footer stays at bottom */
 .footer {
   text-align: center;
-  margin-top: 60px;
   padding: 25px 0;
   font-size: 16px;
   color: rgb(223, 226, 253);
   background-color: rgb(28, 25, 40);
   border-top: 1px solid rgba(223, 226, 253, 0.3);
   letter-spacing: 0.5px;
+  margin-top: auto; /* pushes footer to bottom */
 }
 
 .footer p {
   margin: 0;
   opacity: 0.9;
 }
-
-

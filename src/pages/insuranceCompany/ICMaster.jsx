@@ -5,10 +5,12 @@ import Footer from '../../components/Footer'
 
 function ICMaster() {
   return (
-    <div>
-        <ICNav/>
-        <Outlet/>
-        <Footer/>
+    <div className="app-container">
+      <ICNav />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   )
 }

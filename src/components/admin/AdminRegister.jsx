@@ -51,7 +51,6 @@ function Register() {
               <option value="ADMIN">Admin</option>
           </select> <br/>
           <button type='submit'>Register</button>
-          <p>Already registered? <a href='/login'>login here</a></p>
         </form>
         {message && (<p className='register-message'> {message}</p>)}
       </div>

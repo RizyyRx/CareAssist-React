@@ -1,0 +1,32 @@
+.admin-home-container {
+  min-height: 100vh;
+  padding: 40px 60px;
+}
+
+.admin-home-container h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+  color: rgb(223, 226, 253);
+  margin-bottom: 40px;
+}
+
+.payments-section {
+  margin-top: 80px;
+}
+
+.payments-section h2 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(223, 226, 253);
+  margin-bottom: 30px;
+}
+
+.no-data-text {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(223, 226, 253);
+  opacity: 0.9;
+  margin-top: 20px;
+}

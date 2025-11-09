@@ -12,9 +12,9 @@ function AdminNav() {
           </div>
 
           <div className="nav-links">
-            <Link to="admin-home">Home</Link>
+            <Link to="admin-home">Dashboard</Link>
             <Link to="manage-accounts">Manage Accounts</Link>
-            <Link to="admin-register">Register</Link>
+            <Link to="admin-register">Create Accounts</Link>
             <Link to="/logout">Logout</Link>
           </div>
         </div>

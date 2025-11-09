@@ -30,6 +30,8 @@ import NotFound from './components/NotFound'
 function App() {
 
   return (
+    <div className="app-container">
+      <main>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/patient-register' element={<PatientRegister/>}/>
@@ -72,6 +74,10 @@ function App() {
         
         <Route path="*" element={<NotFound/>} />
       </Routes>
+      </main>
+    </div>
+    
+      
   )
 }
 

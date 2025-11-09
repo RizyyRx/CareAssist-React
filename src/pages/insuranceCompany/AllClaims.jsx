@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SelectedPlans from "../../components/patient/SelectedPlans";
 import "./AllClaims.css";
+import { useAuth } from "../../components/AuthContext";
 
 function AllClaims() {
   const [claims, setClaims] = useState([]);
   const [message, setMessage] = useState("");
   const token = localStorage.getItem("token");
+  const { user } = useAuth();
+  const isAdmin = user?.role === "ROLE_ADMIN";
 
   const fetchClaims = async () => {
     try {
@@ -49,7 +52,7 @@ function AllClaims() {
       {message && <p>{message}</p>}
       <table>
         <thead>
-          <tr><th>Claim ID</th><th>Claim Amount</th><th>Invoice Amount</th><th>Date of Service</th><th>Diagnosis</th><th>Treatment</th><th>Status</th><th>Submitted At</th><th>Reviewed At</th><th>Approved At</th><th>Action</th></tr>
+          <tr><th>Claim ID</th><th>Claim Amount</th><th>Invoice Amount</th><th>Date of Service</th><th>Diagnosis</th><th>Treatment</th><th>Status</th><th>Submitted At</th><th>Reviewed At</th><th>Approved At</th>{!isAdmin && <th>Action</th>}</tr>
         </thead>
         <tbody>
           {claims.length > 0 ? (
@@ -65,7 +68,13 @@ function AllClaims() {
                 <td>{formatDateTime(claim.submittedAt)}</td>
                 <td>{formatDateTime(claim.reviewedAt)}</td>
                 <td>{formatDateTime(claim.approvedAt)}</td>
-                <td>{claim.status !== "APPROVED" ? <button onClick={() => handleApprove(claim.claimId)}>Review & Approve Claim</button> : "Approved"}</td>
+                {!isAdmin && (
+                  <td>
+                    {claim.status !== "APPROVED" ? (
+                      <button onClick={() => handleApprove(claim.claimId)}>Review & Approve Claim</button>
+                    ) : "Approved"}
+                  </td>
+                )}
               </tr>
             ))
           ) : (

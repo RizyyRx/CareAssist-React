@@ -1,0 +1,63 @@
+.manage-accounts-container {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20px;
+  padding: 20px;
+}
+
+.manage-accounts-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 600;
+  color: rgb(223, 226, 253);
+}
+
+.manage-accounts-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgb(223, 226, 253);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(104, 90, 202, 0.3);
+}
+
+.manage-accounts-container th,
+.manage-accounts-container td {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.manage-accounts-container th {
+  background-color: rgb(39, 33, 60);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.manage-accounts-container td {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.manage-accounts-container tr:hover {
+  background-color: #f4f4f4;
+}
+
+.manage-accounts-container button {
+  padding: 6px 12px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.manage-accounts-container button:hover {
+  background-color: #c9302c;
+}
