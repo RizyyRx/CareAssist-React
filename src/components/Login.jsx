@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link  } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 import './Login.css';
 import HomeNav from './HomeNav';
@@ -64,6 +64,7 @@ function Login() {
                 <input type="text" name="usernameOrEmail" placeholder="Username or Email" value={formData.usernameOrEmail} onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
                 <button type="submit">Submit</button>
+                <div className="forgot-password-link"><Link to="/forgot-password">Forgot Password?</Link></div>
                 {message && <p className="login-message">{message}</p>}
                 </form>
             </div>

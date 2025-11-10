@@ -48,3 +48,20 @@
   margin-top: 10px;
   text-align: center;
 }
+
+.forgot-password-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password-link a {
+  color: #5a4fcf;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.forgot-password-link a:hover {
+  color: #3b32a3;
+  text-decoration: underline;
+}

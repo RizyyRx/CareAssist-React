@@ -51,7 +51,6 @@ button:disabled {
   transform: none;
 }
 
-/* Footer stays at bottom */
 .footer {
   text-align: center;
   padding: 25px 0;
@@ -60,7 +59,7 @@ button:disabled {
   background-color: rgb(28, 25, 40);
   border-top: 1px solid rgba(223, 226, 253, 0.3);
   letter-spacing: 0.5px;
-  margin-top: auto; /* pushes footer to bottom */
+  margin-top: auto;
 }
 
 .footer p {

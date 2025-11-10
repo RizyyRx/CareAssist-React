@@ -26,6 +26,8 @@ import ProcessPayment from './pages/insuranceCompany/ProcessPayment'
 import ManageAccounts from './pages/admin/ManageAccounts'
 import PatientRegister from './components/patient/PatientRegister'
 import NotFound from './components/NotFound'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
 
 function App() {
 
@@ -37,6 +39,8 @@ function App() {
         <Route path='/patient-register' element={<PatientRegister/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/logout' element={<Logout/>}/>
+        <Route path='/forgot-password' element={<ForgotPassword/>}/>
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
 
 
         <Route path='/patient' element={<ProtectedRoute allowedRole="ROLE_PATIENT"> <PatientMaster/> </ProtectedRoute>}>

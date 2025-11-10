@@ -30,8 +30,8 @@
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal columns */
-  gap: 20px 40px; /* row gap and column gap */
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
 }
 
 .form-column {
