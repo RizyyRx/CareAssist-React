@@ -50,7 +50,7 @@ function ProcessPayment() {
           <label htmlFor="claimId">Claim ID</label>
           <input type="number" id="claimId" name="claimId" value={formData.claimId} placeholder="Enter Claim ID" onChange={handleChange} required />
 
-          <label htmlFor="amountPaid">Amount Paid</label>
+          <label htmlFor="amountPaid">Amount to Pay</label>
           <input type="number" id="amountPaid" name="amountPaid" value={formData.amountPaid} placeholder="Enter Amount" onChange={handleChange} required />
 
           <button type="submit">Process Payment</button>

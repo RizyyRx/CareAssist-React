@@ -33,7 +33,19 @@ function CreateInsurancePlan() {
         console.log("Error object:", error);
         console.log("Error.response:", error.response);
         if(error.response){
-          setCreateMessage(error.response.data.message || JSON.stringify(error.response.data));
+          const data = error.response.data;
+
+          if (data && typeof data === "object") {
+            const combined = Object.values(data).join(" | ");
+            setCreateMessage(combined);
+            console.log("Extracted message:", combined);
+          } 
+          else if (typeof data === "string") {
+            setCreateMessage(data);
+          } 
+        else {
+          setCreateMessage("Invalid input — please check your fields.");
+        }
         } else{
           setCreateMessage("Server not reachable");
         }

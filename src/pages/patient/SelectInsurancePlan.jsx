@@ -26,7 +26,21 @@ function SelectInsurancePlan() {
       setRefreshTrigger(prev => !prev);
     } catch (error) {
       if (error.response) {
-        setMessage(error.response.data || "Failed to select plan");
+        // Check if backend returned an object
+        if (data && typeof data === "object") {
+          // Extract and join all messages cleanly
+          const combined = Object.values(data).join(" | ");
+          setMessage(combined);
+          console.log("Extracted message:", combined);
+        } 
+        // If backend sent a plain string (rare case)
+        else if (typeof data === "string") {
+          setMessage(data);
+        } 
+        // Fallback for unknown cases
+        else {
+          setMessage("Invalid input — please check your fields.");
+        }
       } else {
         setMessage("Server not reachable");
       }
@@ -48,7 +62,11 @@ function SelectInsurancePlan() {
         <button type="submit">Select Plan</button>
       </form>
 
-      {message && <p>{message}</p>}
+      {message && (
+        Array.isArray(message)
+          ? message.map((msg, i) => <p key={i}>{msg}</p>)
+          : <p>{message}</p>
+      )}
 
       <SelectedPlans refresh={refreshTrigger} />
       <GetInsurancePlans refreshTrigger={refreshTrigger} />

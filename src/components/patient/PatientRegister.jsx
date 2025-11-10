@@ -38,7 +38,14 @@ function Register() {
 
       } catch(err){
         if(err.response){
-          setMessage(err.response.data);
+          const data = err.response.data;
+          if (typeof data === "object") {
+            const allMessages = Object.values(data).join(" | ");
+            setMessage(allMessages);
+          } 
+          else{
+            setMessage(data);
+          } 
         } else{
           setMessage('Server not reachable');
         }
