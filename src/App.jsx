@@ -29,6 +29,7 @@ import NotFound from './components/NotFound'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import ICProfile from './pages/insuranceCompany/ICProfile'
+import HPProfile from './pages/healthcareProvider/HPProfile'
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
         <Route path='/hp' element={<ProtectedRoute allowedRole="ROLE_HEALTHCARE_PROVIDER"> <HPMaster/> </ProtectedRoute>}>
           <Route index element={<Navigate to="hp-home" replace />} />
           <Route path='hp-home' element={<HPHome/>}/>
+          <Route path='hp-profile' element={<HPProfile/>}/>
           <Route path='create-invoice' element={<CreateInvoice/>}/>
         </Route>
         

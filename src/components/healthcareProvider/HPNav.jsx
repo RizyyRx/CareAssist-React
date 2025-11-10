@@ -13,6 +13,7 @@ function HPNav() {
 
           <div className="nav-links">
             <Link to="hp-home">Home</Link>
+            <Link to="hp-profile">Profile</Link>
             <Link to="create-invoice">Invoices</Link>
             <Link to="/logout">Logout</Link>
           </div>
