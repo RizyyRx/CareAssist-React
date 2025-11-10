@@ -30,6 +30,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import ICProfile from './pages/insuranceCompany/ICProfile'
 import HPProfile from './pages/healthcareProvider/HPProfile'
+import OAuth2RedirectHandler from './pages/OAuth2RedirectHandler'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
         <Route path='/logout' element={<Logout/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/oauth2/redirect" element={<OAuth2RedirectHandler/>} />
 
 
         <Route path='/patient' element={<ProtectedRoute allowedRole="ROLE_PATIENT"> <PatientMaster/> </ProtectedRoute>}>

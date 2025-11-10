@@ -43,6 +43,22 @@
   background-color: #f9f9ff;
 }
 
+.login-form button {
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #5a4fcf;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #3b32a3;
+}
+
 .login-message {
   color: rgb(223, 226, 253);
   margin-top: 10px;
@@ -64,4 +80,53 @@
 .forgot-password-link a:hover {
   color: #3b32a3;
   text-decoration: underline;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(223, 226, 253);
+  margin: 25px 0;
+  font-weight: 500;
+  position: relative;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(223, 226, 253, 0.3);
+  margin: 0 10px;
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #444;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.google-login-btn:hover {
+  background-color: #f2f2f2;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(104, 90, 202, 0.3);
+  color: black;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
 }
