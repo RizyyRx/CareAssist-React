@@ -13,6 +13,7 @@ function ICNav() {
 
           <div className="nav-links">
             <Link to="ic-home">Home</Link>
+            <Link to="ic-profile">Profile</Link>
             <Link to="create-insurance-plan">Insurance Plans</Link>
             <Link to="all-claims">Claim Requests</Link>
             <Link to="process-payment">Payments</Link>

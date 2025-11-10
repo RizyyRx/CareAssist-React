@@ -28,6 +28,7 @@ import PatientRegister from './components/patient/PatientRegister'
 import NotFound from './components/NotFound'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
+import ICProfile from './pages/insuranceCompany/ICProfile'
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
         <Route path='/ic' element={<ProtectedRoute allowedRole="ROLE_INSURANCE_COMPANY"> <ICMaster/> </ProtectedRoute>}>
           <Route index element={<Navigate to="ic-home" replace />} />
           <Route path='ic-home' element={<ICHome/>}/>
+          <Route path='ic-profile' element={<ICProfile/>}/>
           <Route path='create-insurance-plan' element={<CreateInsurancePlan/>}/>
           <Route path='all-claims' element={<AllClaims/>}/>
           <Route path='process-payment' element={<ProcessPayment/>}/>
