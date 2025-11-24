@@ -51,7 +51,7 @@ function Login() {
           <h1>Login Here</h1>
 
           <form className="login-form" onSubmit={handleSubmit}>
-            <input type="text" name="usernameOrEmail" placeholder="Username or Email" value={formData.usernameOrEmail} onChange={handleChange} required />
+            <input type="text" name="usernameOrEmail" placeholder="Username" value={formData.usernameOrEmail} onChange={handleChange} required />
             <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
             <button type="submit">Submit</button>
             <div className="forgot-password-link"><Link to="/forgot-password">Forgot Password?</Link></div>
