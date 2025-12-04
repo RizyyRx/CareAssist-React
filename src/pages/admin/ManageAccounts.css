@@ -27,7 +27,7 @@
 
 .manage-accounts-container th,
 .manage-accounts-container td {
-  text-align: left;
+  text-align: center;
   padding: 12px 15px;
   border-bottom: 1px solid #ddd;
 }
@@ -48,7 +48,7 @@
   background-color: #f4f4f4;
 }
 
-.manage-accounts-container button {
+.manage-accounts-container .delete-btn {
   padding: 6px 12px;
   background-color: #d9534f;
   color: white;
@@ -58,6 +58,116 @@
   font-size: 14px;
 }
 
-.manage-accounts-container button:hover {
+.manage-accounts-container .delete-btn:hover {
   background-color: #c9302c;
+}
+
+.manage-accounts-container .update-btn {
+  padding: 6px 12px;
+  background-color: #5a69d3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+.manage-accounts-container .update-btn:hover {
+  background-color: #5a69d3;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: rgb(39, 33, 60);
+  padding: 20px 24px;
+  border-radius: 10px;
+  width: 450px;
+  color: white;
+  box-shadow: 0 0 15px rgba(104, 90, 202, 0.5);
+}
+
+.modal h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(223, 226, 253);
+}
+
+.modal-form .form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-form label {
+  width: 40%;
+  font-weight: 500;
+  color: rgb(223, 226, 253);
+}
+
+.modal-form input,
+.modal-form select {
+  width: 55%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  background-color: rgb(223, 226, 253);
+  color: black;
+}
+
+.error-text {
+  color: #ff7272;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-cancel-btn {
+  padding: 6px 12px;
+  background-color: #c9302c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-save-btn {
+  padding: 6px 12px;
+  background-color: #5a69d3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-cancel-btn:hover {
+  background-color: #d9534f;
+}
+
+.modal-save-btn:hover {
+  background-color: #4755b0;
+}
+
+.hint {
+  font-size: 12px;
+  color: #ffdb9a;
 }
